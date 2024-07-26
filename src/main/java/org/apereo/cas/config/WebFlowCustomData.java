@@ -10,7 +10,7 @@ public class WebFlowCustomData implements Serializable {
     String env = AppInfo.getEnvName();
     return String.format(
         "https://localhost:8443/registration-form%s",
-        "prod".equalsIgnoreCase(env) ? "" : "-" + env
+        "standalone".equalsIgnoreCase(env) ? "" : "-" + env
     );
   }
 

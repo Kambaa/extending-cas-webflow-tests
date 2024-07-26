@@ -46,6 +46,14 @@ To run the example, run this command:
 ./gradlew run
 ```
 
+to define a directory for log files and run the app in another profile(don't forget to change the
+yml
+file accordingly):
+
+```shell
+./gradlew run -DbaseDir=C:\\dev\\logs -Dspring.profiles.active=qa
+```
+
 go to https://localhost:8443/cas/login and use the given example user and password `demo` with a
 password of `demo`
 
