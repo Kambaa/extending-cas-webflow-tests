@@ -9,7 +9,7 @@ public class WebFlowCustomData implements Serializable {
   public String getRegistrationUrl() {
     String env = AppInfo.getEnvName();
     return String.format(
-        "https://localhost:8443/registration-form",
+        "https://localhost:8443/registration-form%s",
         "prod".equalsIgnoreCase(env) ? "" : "-" + env
     );
   }
