@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.apereo.cas.config.CasOverlayOverrideConfiguration,\
+  org.apereo.cas.config.InMemoryAuthnHandlerConfig,\
+  org.apereo.cas.config.WebFlowConfig

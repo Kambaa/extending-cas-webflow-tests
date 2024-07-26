@@ -1,0 +1,10 @@
+{
+  "serviceId":"^(http):(.+?.)mycompany\\.com\\.tr([^\\.].*)?|.*localhost.*|.*127.0.0.1.*",
+  "@class": "org.apereo.cas.services.CasRegisteredService",
+  "logo":"images/localhost.png",
+  "name": "Yerel Makine",
+  "description": "Yerel Makine Servisleri",
+  "id": 20000000,
+  "enabled": true,
+  "ssoEnabled": true
+}

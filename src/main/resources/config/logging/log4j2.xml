@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+All loggers are asynchronous because of log42.component.properties in cas-server-core-logging-api.
+Set -Dlog4j2.contextSelector=org.apache.logging.log4j.core.selector.BasicContextSelector or override log42.component.properties to turn off async
+-->
+<!-- Specify the refresh internal in seconds. -->
+<Configuration monitorInterval="5">
+    <Appenders>
+        <Console name="casConsole" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{%d %p [%c] - &lt;%m&gt;%n}"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="info">
+            <AppenderRef ref="casConsole"/>
+        </Root>
+    </Loggers>
+</Configuration>

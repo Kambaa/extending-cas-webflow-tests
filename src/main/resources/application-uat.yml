@@ -1,0 +1,70 @@
+# Application properties that need to be
+# embedded within the web application can be included here
+
+cas:
+  server:
+    name: https://localhost:8443
+    prefix: https://localhost:8443/cas
+    scope: https://localhost:8443
+  theme:
+    default-theme-name: customtheme
+  authn:
+    accept:
+      enabled: false
+    pm:
+      core:
+        enabled: true
+        password-policy-pattern: ^(?=.*\d)(?=.*[a-zA-Z])(?=.*[A-Z])(?=.*[-\#\$\.\%\&\*\!\+\_\=\?\'\{\}\/])(?=.*[a-zA-Z]).{8,16}$
+      history:
+        core:
+          enabled: false
+      forgot-username:
+        enabled: true
+        mail:
+          from: no-reply@myexample.com.tr
+          subject: Local CAS Username
+          attribute-name: email
+        google-recaptcha:
+          enabled: false
+      reset:
+        security-questions-enabled: false
+        # For easily refresh the password reset pages
+        number-of-uses: 1000
+        include-server-ip-address: false
+        expiration: PT30M
+        mail:
+          from: no-reply@myexample.com.tr
+          subject: Local CAS Password Reset
+          text: 'Your password reset link: ${url}'
+          attribute-name: email
+        sms:
+          text: 'Your local cas password reset url is:${url}'
+          from: 'localcas'
+          attribute-name: phone
+
+
+#  Example ssl configs that don't need to look at the /etc/cas or C:/etc/cas
+server:
+  ssl:
+    key-store-password: changeit
+    key-store: classpath:config/ssl/thekeystore
+    key-password: changeit
+    enabled: true
+
+# Example logging config that doesn't need to look at the /etc/cas or C:/etc/cas
+logging:
+  config: 'classpath:config/logging/log4j2.xml'
+
+spring:
+  mail:
+    test-connection: true
+    host: 'mail.myexample.com.tr'
+    port: 587
+    username: 'no-reply@myexample.com.tr'
+    password: 'smtppassword'
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
